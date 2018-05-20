@@ -1,0 +1,27 @@
+{
+  "name": "nodejsserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troisPoumons/nodejsserver.git"
+  },
+  "author": "jeanmi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troisPoumons/nodejsserver/issues"
+  },
+  "homepage": "https://github.com/troisPoumons/nodejsserver#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}
