@@ -4,6 +4,7 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.set('view engine', 'ejs')
 
 MongoClient.connect('mongodb://moi:moi@ds237808.mlab.com:37808/star-wars-quotes', (err, client) => {
 
@@ -25,9 +26,13 @@ MongoClient.connect('mongodb://moi:moi@ds237808.mlab.com:37808/star-wars-quotes'
 
     app.get('/', (req, res) => {
         dbo.collection('quotes').find().toArray(function(err, results) {
+            if (err) return console.log(err)
             console.log(results)
+
+            res.render('index.ejs', {quotes :results})
+
+           // res.sendFile(__dirname + '/index.html')
         })
-            res.sendFile(__dirname + '/index.html')
     })
 
 })
